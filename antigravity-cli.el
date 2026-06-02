@@ -1277,7 +1277,7 @@ prompt for the project directory."
       (setq-local vertical-scroll-bar nil)
 
       ;; Display buffer, setting window parameters
-      (let ((window (display-buffer-in-side-window buffer '((side . right)(window-width . 0.4)))))
+      (let ((window (display-buffer-in-side-window buffer '((side . bottom)(window-height . 0.5)))))
         (when window
           ;; turn off fringes and margins in the Antigravity buffer
           (set-window-parameter window 'left-margin-width 0)
@@ -1679,7 +1679,7 @@ If the Antigravity buffer doesn't exist, create it."
     (if antigravity-cli-buffer
         (if (get-buffer-window antigravity-cli-buffer)
             (delete-window (get-buffer-window antigravity-cli-buffer))
-      (let ((window (display-buffer-in-side-window antigravity-cli-buffer '((side . right)(window-width . 0.4)))))
+      (let ((window (display-buffer-in-side-window antigravity-cli-buffer '((side . bottom)(window-height . 0.5)))))
             ;; set no-delete-other-windows parameter for antigravity-cli window
             (set-window-parameter window 'no-delete-other-windows antigravity-cli-no-delete-other-windows)))
       (antigravity-cli--show-not-running-message))))
